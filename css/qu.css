@@ -1,0 +1,125 @@
+*{
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  background:#afc8cc;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Wrapper */
+.quiz-wrapper{
+  width:420px;
+}
+
+/* Cards */
+.card{
+  display:none;              
+  background:#ffffff;
+  padding:22px;
+  border-radius:20px;
+  color:rgb(16, 15, 15);
+  box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+
+/* SHOW ONLY ACTIVE QUESTION */
+.card:target{
+  display:block;
+}
+
+/* DEFAULT SHOW Q1 */
+#q1{
+  display:block;
+}
+
+/* Top */
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:14px;
+  color:#161515;
+}
+
+/* Timer */
+.timer{
+  position:relative;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:#b4dee5;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.timer span{ z-index:2; font-size:12px; }
+
+.ring{
+  position:absolute;
+  inset:4px;
+  border-radius:50%;
+  border:3px solid #087783;
+  animation:spin 15s linear forwards;
+}
+
+/* Question */
+h2{
+  margin:18px 0;
+  font-size:18px;
+}
+
+/* Options */
+.options{
+  display:grid;
+  gap:12px;
+}
+
+.opt{
+  border:2px solid #8ccbd2;
+  padding:12px;
+  border-radius:14px;
+  text-align:center;
+  cursor:pointer;
+}
+
+.opt:hover{
+  background:#bde4f0;
+  color:#064e3b;
+}
+
+/* Buttons */
+.nav{
+  display:flex;
+  justify-content:space-between;
+  margin-top:20px;
+}
+
+.btn{
+  width:48%;
+  padding:10px;
+  text-align:center;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.next{
+  background:#33b38c;
+    color:#ffffff;
+}
+
+.prev{
+  background:#33b38c;
+color:#ffffff;
+}
+
+/* Timer animation */
+@keyframes spin{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}

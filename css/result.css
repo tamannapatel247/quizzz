@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body{
+    background:#afc8cc;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Result Card */
+.result-card{
+    width:420px;
+    background:#ffffff;
+    padding:25px;
+    border-radius:20px;
+    color:#060908;
+    text-align:center;
+    box-shadow:0 20px 45px rgba(0,0,0,.4);
+}
+
+/* Headings */
+.title{
+    margin-bottom:5px;
+}
+
+.subtitle{
+    font-size:14px;
+    color:#000702;
+    margin-bottom:20px;
+}
+
+/* Score Circle */
+.score-circle{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:6px solid #22c55e;
+    margin:0 auto 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.score-circle small{
+    font-size:12px;
+    font-weight:normal;
+}
+
+/* Stats */
+.stats{
+    display:flex;
+    justify-content:space-between;
+    margin:20px 0;
+}
+
+.stat{
+    width:30%;
+    background:#dcedef;
+    padding:15px 5px;
+    border-radius:12px;
+}
+
+.stat h2{
+    margin:0;
+}
+
+.correct h2{ color:#22c55e; }
+.wrong h2{ color:#ef4444; }
+.skip h2{ color:#facc15; }
+
+/* Message */
+.message{
+    background:#dcedef;;
+    padding:12px;
+    border-radius:12px;
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+/* Buttons */
+.actions{
+    display:flex;
+    justify-content:space-between;
+}
+
+.actions a{
+    width:48%;
+    padding:10px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    background:#33b38c;
+    color:#ffffff;
+}
+
+.actions .secondary{
+    background:#33b38c;
+    color:#ffffff;
+}

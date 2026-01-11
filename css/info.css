@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/*  Light green background */
+body {
+  min-height: 100vh;
+  background: #afc8cc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 📦 Wrapper */
+.instruction-wrapper {
+  width: 100%;
+  padding: 20px;
+}
+
+/* 🧾 Card */
+.instruction-card {
+  max-width: 900px;
+  margin: auto;
+  background: #ffffff;
+  padding: 35px 45px;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* 📝 Headings */
+.instruction-card h2 {
+  text-align: center;
+  color: #1f4d3a;
+  font-size: 28px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 6px;
+  color: #5f8f7c;
+  margin-bottom: 30px;
+}
+
+/* 🧩 Grid layout */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.info-grid h4 {
+  color: #2e7d62;
+  margin-bottom: 10px;
+}
+
+/* 📄 Lists */
+ul {
+  padding-left: 20px;
+  line-height: 1.8;
+  color: #344f44;
+}
+
+/* 📌 Bottom rules */
+.bottom-rules {
+  margin-top: 25px;
+}
+
+/* ▶ Button */
+.start-btn {
+  display: block;
+  margin: 35px auto 0;
+  padding: 14px 40px;
+  font-size: 16px;
+  background: #2e7d62;
+  color: white;
+  border: none;
+  border-radius: px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  background: #256b54;
+  transform: translateY(-2px);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
