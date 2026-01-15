@@ -17,9 +17,34 @@
 }
 
 .logo {
+    font-weight: 600;
+    color: #1e3a5f;
+    gap: 15px;
+    text-decoration: none;
+    font-size: 25px;
+}
+/* .logo1 {
     font-size: 20px;
     font-weight: 600;
     color: #1e3a5f;
+    display: flex;
+    gap: 50px;
+    text-decoration: none;
+} */
+.nav-links {
+    display: flex;
+    gap: 50px;
+    justify-content: flex-end;
+}
+.nav-links a {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e3a5f;
+    text-decoration: none;  /* remove underline */
+}
+
+.nav-links a:hover {
+    color: #0f2a45;
 }
 
 .user-area {
@@ -105,7 +130,7 @@ body {
 
 .option-card small {
     font-size: 12px;
-    color: #666;
+     color: #666666; 
 }
 
 /* Hover */

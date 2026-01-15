@@ -7,93 +7,81 @@
 </head>
 <body>
 
-<div class="quiz-wrapper">
+  <div class="topbar">
+    <div class="logo">QuizMaster</div>
+    <div class="nav-links">
+    <a href="selection.html">Home</a>
+    <a href="qupanel.html">Quiz Panel</a>
+    <a href="result.html">Result Page</a>
+    <a href="proogress.html">Progress Bar Section</a>
+    </div>
+    <div class="user-area">
+        <span>Guest User</span>
+        <a href="index.html"><button class="logout-btn">Logout</button></a>
+    </div>
+</div>
 
-<!-- Q1 -->
-<section class="card" id="q1">
-  <div class="top">
-    <span>Question 1 of 4</span>
-    <div class="timer"><span>15s</span><div class="ring"></div></div>
-  </div>
+<div class="page">
+<div class="quiz-card">
 
-  <h2>Which tag is used for hyperlink?</h2>
+<!-- hidden step controls -->
+<input type="radio" name="step" id="q1" checked>
+<input type="radio" name="step" id="q2">
+<input type="radio" name="step" id="q3">
 
-  <div class="options">
-    <div class="opt">&lt;link&gt;</div>
-    <div class="opt">&lt;a&gt;</div>
-    <div class="opt">&lt;href&gt;</div>
-    <div class="opt">&lt;url&gt;</div>
-  </div>
+<!-- HEADER -->
+<div class="quiz-header">
+  <span>Q. 3/20</span>
+  <div class="circle-timer"> <svg> <circle class="bg"></circle> <circle class="progress"></circle> </svg> <span class="time-text">30s</span> </div>
+</div>
 
-  <a href="#q2" class="btn next">Next</a>
-</section>
+<!-- QUESTION 1 -->
+<div class="question-box q1">
+  <p class="question">What does HTML stand for?</p>
 
-<!-- Q2 -->
-<section class="card" id="q2">
-  <div class="top">
-    <span>Question 2 of 4</span>
-    <div class="timer"><span>15s</span><div class="ring"></div></div>
-  </div>
-
-  <h2>CSS stands for?</h2>
-
-  <div class="options">
-    <div class="opt">Creative Style Sheet</div>
-    <div class="opt">Cascading Style Sheet</div>
-    <div class="opt">Color Style Sheet</div>
-    <div class="opt">Computer Style Sheet</div>
-  </div>
-
-  <div class="nav">
-    <a href="#q1" class="btn prev">Previous</a>
-    <a href="#q3" class="btn next">Next</a>
-  </div>
-</section>
-
-<!-- Q3 -->
-<section class="card" id="q3">
-  <div class="top">
-    <span>Question 3 of 4</span>
-    <div class="timer"><span>15s</span><div class="ring"></div></div>
-  </div>
-
-  <h2>Which runs in browser?</h2>
-
-  <div class="options">
-    <div class="opt">C</div>
-    <div class="opt">Python</div>
-    <div class="opt">Java</div>
-    <div class="opt">JavaScript</div>
-  </div>
+  <label class="option"><input type="radio" name="a1"> Hyper Text Markup Language</label>
+  <label class="option"><input type="radio" name="a1"> High Text Machine Language</label>
+  <label class="option"><input type="radio" name="a1"> Hyper Tool Multi Language</label>
+  <label class="option"><input type="radio" name="a1"> Home Text Markup Language</label>
 
   <div class="nav">
-    <a href="#q2" class="btn prev">Previous</a>
-    <a href="#q4" class="btn next">Next</a>
+    <label for="q2" class="next-btn">Next</label>
   </div>
-</section>
+</div>
 
-<!-- Q4 -->
-<section class="card" id="q4">
-  <div class="top">
-    <span>Question 4 of 4</span>
-    <div class="timer"><span>15s</span><div class="ring"></div></div>
-  </div>
+<!-- QUESTION 2 -->
+<div class="question-box q2">
+  <p class="question">CSS is used for?</p>
 
-  <h2>HTML is a ___ language?</h2>
-
-  <div class="options">
-    <div class="opt">Programming</div>
-    <div class="opt">Markup</div>
-    <div class="opt">Database</div>
-    <div class="opt">Scripting</div>
-  </div>
+  <label class="option"><input type="radio" name="a2"> Styling web pages</label>
+  <label class="option"><input type="radio" name="a2"> Database</label>
+  <label class="option"><input type="radio" name="a2"> Server logic</label>
+  <label class="option"><input type="radio" name="a2"> None</label>
 
   <div class="nav">
-    <a href="#q3" class="btn prev">Previous</a>
-    <a href="result.html" class="btn next">Submit</a>
+    <label for="q1" class="prev-btn">Previous</label>
+    <label for="q3" class="next-btn">Next</label>
   </div>
-</section>
+</div>
+
+<!-- QUESTION 3 -->
+<div class="question-box q3">
+  <p class="question">Which is NOT a programming language?</p>
+
+  <label class="option"><input type="radio" name="a3"> Python</label>
+  <label class="option"><input type="radio" name="a3"> Java</label>
+  <label class="option"><input type="radio" name="a3"> HTML</label>
+  <label class="option"><input type="radio" name="a3"> C</label>
+
+  <div class="nav">
+    <label for="q2" class="prev-btn">Previous</label>
+    <button class="submit-btn">Submit</button>
+  </div>
+</div>
 
 </div>
+</div>
+
 </body>
 </html>
+

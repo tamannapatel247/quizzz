@@ -1,6 +1,8 @@
-*{
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body{
@@ -10,12 +12,18 @@ body{
     justify-content:center;
     align-items:center;
 }
+.page {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Result Card */
 .result-card{
     width:420px;
     background:#ffffff;
-    padding:25px;
+    padding:30px;
     border-radius:20px;
     color:#060908;
     text-align:center;
@@ -103,4 +111,61 @@ body{
 .actions .secondary{
     background:#33b38c;
     color:#ffffff;
+}
+
+/* Top Bar */
+.topbar {
+    height: 60px;
+    background: #f5f8fb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-weight: 600;
+    color: #1e3a5f;
+    gap: 15px;
+    text-decoration: none;
+    font-size: 25px;
+}
+/* .logo1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e3a5f;
+    display: flex;
+    gap: 50px;
+    text-decoration: none;
+} */
+.nav-links {
+    display: flex;
+    gap: 50px;
+    justify-content: flex-end;
+}
+.nav-links a {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e3a5f;
+    text-decoration: none;  /* remove underline */
+}
+
+.nav-links a:hover {
+    color: #0f2a45;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logout-btn {
+    padding: 6px 12px;
+    border: none;
+    background: #1e88e5;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
 }
