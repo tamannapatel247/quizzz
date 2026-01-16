@@ -57,50 +57,38 @@ body{
 .nav{
   display:flex;
   justify-content:space-between;
-  gap:10px;
+  gap:12px;
   margin-top:15px;
 }
 
-/* .prev-btn{
-  flex:1;
-  text-align:center;
-  padding:12px;
-  background:#3bde7f;
-  color:white;
-  border-radius:10px;
-  cursor:pointer;
-} */
-
-.prev-btn,.next-btn{
-  flex:1;
-  text-align:center;
-  padding:12px;
-  background:#3bde7f;
-  color:white;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  font-size:27px;
-}
+.prev-btn,
+.next-btn,
 .submit-btn{
-  flex:1;
+  flex:1;               
   text-align:center;
-  padding:12px;
-  background:#ea9090;
-  color:white;
+  padding:14px;
   border:none;
-  border-radius:10px;
+  border-radius:12px;
   cursor:pointer;
-  font-size:27px;
+  font-size:22px;
+  color:white;
+}
+.prev-btn,
+.next-btn{
+  background:#3bde7f;
+}
+
+.submit-btn{
+  background:#ea9090;
+}
+
+.prev-btn:hover,
+.next-btn:hover{
+  background:#27ae60;
 }
 
 .submit-btn:hover{
   background:#d56868;
-}
-
-.next-btn:hover,.prev-btn:hover
-{
-  background:#27ae60;
 }
 
 

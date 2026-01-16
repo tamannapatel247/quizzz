@@ -8,20 +8,20 @@
 body{
     background:#afc8cc;
     height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
 }
 .page {
-    min-height: calc(100vh - 70px);
+    min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
+.result-card{
+    margin: auto;
+}
+
 
 /* Result Card */
 .result-card{
-    width:420px;
+    width:550px;
     background:#ffffff;
     padding:30px;
     border-radius:20px;
@@ -32,19 +32,20 @@ body{
 
 /* Headings */
 .title{
-    margin-bottom:5px;
+    margin-bottom:10px;
+    font-size:38px;
 }
 
 .subtitle{
-    font-size:14px;
+    font-size:18px;
     color:#000702;
     margin-bottom:20px;
 }
 
 /* Score Circle */
 .score-circle{
-    width:120px;
-    height:120px;
+    width:150px;
+    height:150px;
     border-radius:50%;
     border:6px solid #22c55e;
     margin:0 auto 20px;
@@ -52,12 +53,12 @@ body{
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    font-size:22px;
+    font-size:25px;
     font-weight:bold;
 }
 
 .score-circle small{
-    font-size:12px;
+    font-size:14px;
     font-weight:normal;
 }
 
@@ -65,7 +66,7 @@ body{
 .stats{
     display:flex;
     justify-content:space-between;
-    margin:20px 0;
+    margin:26px 0;
 }
 
 .stat{
@@ -86,10 +87,10 @@ body{
 /* Message */
 .message{
     background:#dcedef;;
-    padding:12px;
+    padding:16px;
     border-radius:12px;
-    margin-bottom:20px;
-    font-size:14px;
+    margin-bottom:26px;
+    font-size:18px;
 }
 
 /* Buttons */
@@ -106,6 +107,7 @@ body{
     font-weight:bold;
     background:#33b38c;
     color:#ffffff;
+    font-size:20px;
 }
 
 .actions .secondary{

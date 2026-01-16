@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Quiz</title>
 <link rel="stylesheet" href="css/qu.css">
+<link rel="stylesheet" href="css/circular.css">
 </head>
 <body>
 
@@ -22,6 +23,21 @@
 </div>
 
 <div class="page">
+
+<div class="loader-overlay">
+  <div class="loader-card">
+    <div class="circle-loader">
+      <svg>
+        <circle class="bg"></circle>
+        <circle class="progress"></circle>
+      </svg>
+      <span class="loader-text">Loading</span>
+    </div>
+    <p>Preparing your quiz...</p>
+  </div>
+</div>
+
+
 <div class="quiz-card">
 
 <!-- hidden step controls -->
