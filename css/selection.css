@@ -168,3 +168,32 @@ body {
     background: #0c8a64;
 }
 
+/* Footer */
+.footer {
+    background-color: #1e3a5f;
+    color: #ffffff;
+    padding: 15px 40px;
+     margin-top: 111px; 
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}

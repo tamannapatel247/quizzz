@@ -6,6 +6,51 @@
 <link rel="stylesheet" href="css/qu.css">
 <link rel="stylesheet" href="css/circular.css">
 </head>
+
+<script>
+
+const questions = [
+  {
+    question: "What is HTML?",
+    options: ["Language", "Browser", "Protocol"],
+    answer: 0
+  },
+  {
+    question: "What is CSS?",
+    options: ["Style", "Database", "Server"],
+    answer: 0
+  },
+  {
+    question: "What is JavaScript?",
+    options: ["Programming", "Markup", "Design"],
+    answer: 0
+  }
+];
+let currentIndex = 0;
+
+function showQuestion() {
+  document.getElementById("progress").innerText =
+    `Question ${currentIndex + 1} of ${questions.length}`;
+}
+
+document.getElementById("q1").addEventListener("change", () => {
+  currentIndex = 0;
+  showQuestion();
+});
+
+document.getElementById("q2").addEventListener("change", () => {
+  currentIndex = 1;
+  showQuestion();
+});
+
+document.getElementById("q3").addEventListener("change", () => {
+  currentIndex = 2;
+  showQuestion();
+});
+
+</script>
+
+
 <body>
 
   <div class="topbar">
