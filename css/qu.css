@@ -1,3 +1,13 @@
+html, body {
+    height: 100%;
+}
+
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -72,6 +82,7 @@ body{
   cursor:pointer;
   font-size:22px;
   color:white;
+  text-decoration: none;
 }
 .prev-btn,
 .next-btn{
@@ -89,6 +100,12 @@ body{
 
 .submit-btn:hover{
   background:#d56868;
+}
+
+.btn-group{
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
 }
 
 

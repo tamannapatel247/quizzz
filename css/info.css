@@ -1,3 +1,21 @@
+html, body {
+    height: 100%;
+}
+
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;                  /* pushes footer down */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +29,6 @@ body {
   background: #afc8cc;
 }
 .page{
-   min-height: calc(100vh - 60px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,6 +42,7 @@ body {
 
 /*  Card */
 .instruction-card {
+  width: 100%;
   max-width: 900px;
   margin: auto;
   background: #ffffff;
@@ -76,23 +94,26 @@ ul {
 
 /* Button */
 .start-btn {
-  display: block;
-  margin: 35px auto 0;
-  padding: 14px 40px;
-  font-size: 16px;
-  background: #2e7d62;
-  color: white;
-   font-size:22px;
-  border: none;
-  border-radius: px;
-  cursor: pointer;
-  transition: 0.3s;
+  padding: 14px 60px;
+    background: #33b38c;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 6px 15px rgba(30,136,229,0.3);
+    transition: 0.3s;
+    border: 2px solid #118e68;
 }
+.btn-center{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
 
 .start-btn:hover {
   background: #256b54;
-  transform: translateY(-2px);
-  text-decoration: none;
 }
 
 /*  Responsive */
@@ -130,9 +151,9 @@ ul {
 } */
 .nav-links {
     display: flex;
-    gap: 50px;
-    justify-content: flex-end;
+    gap: 30px;
 }
+
 .nav-links a {
     font-size: 20px;
     font-weight: 600;
@@ -164,7 +185,7 @@ ul {
     background-color: #1e3a5f;
     color: #ffffff;
     padding: 15px 40px;
-     margin-top: 109px; 
+    margin-top: auto; 
 }
 
 .footer-content {
@@ -172,6 +193,17 @@ ul {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-links a {
+    margin-left: 0;
+    margin-right: 15px;
+  }
 }
 
 .footer-content p {
@@ -187,4 +219,31 @@ ul {
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+  .instruction-card {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .instruction-card {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .instruction-card h2 {
+    font-size: 22px;
+  }
+
+  .info-grid,
+  .bottom-rules {
+    font-size: 16px;
+  }
+
+  .start-btn {
+    width: 100%;
+    padding: 14px;
+  }
 }

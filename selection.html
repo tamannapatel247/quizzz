@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/selection.css">
 </head>
 <body>
+    <div class="layout">
 
 <!-- Top Bar -->
 <div class="topbar">
@@ -18,11 +19,12 @@
     </div>
     <div class="user-area">
         <span>Guest User</span>
-        <a href="index.html"><button class="logout-btn">Logout</button></a>
+        <a href="qupanel.html" class="start-btn">Start Quiz</a>
     </div>
 </div>
 
 <!-- Main Page -->
+  <main class="content">
 <div class="page">
     <h1 class="title">Customize Your Quiz</h1>
 
@@ -30,32 +32,35 @@
     <div class="box">
         <h3>Choose Topic</h3>
         <div class="option-grid">
-           <div class="option-card" data-value="HTML">HTML</div>
-            <div class="option-card" data-value="CSS">CSS</div>
-            <div class="option-card" data-value="JAVA">JAVA</div>
-            <div class="option-card" data-value="JAVA SCRIPT">JAVA SCRIPT</div>
-            <div class="option-card" data-value="PHP">PHP</div>
-            <div class="option-card" data-value="PYTHON">PYTHON</div>
-            <div class="option-card" data-value="C#">C#</div>
-            <div class="option-card" data-value="DBMS">DBMS</div>
-        </div>
+           <div class="option-grid">
+    <button type="button" class="option-card" data-subject="HTML">HTML</button>
+    <button type="button" class="option-card" data-subject="CSS">CSS</button>
+    <button type="button" class="option-card" data-subject="JAVA">JAVA</button>
+    <button type="button" class="option-card" data-subject="JAVASCRIPT">JAVA SCRIPT</button>
+    <button type="button" class="option-card" data-subject="PHP">PHP</button>
+    <button type="button" class="option-card" data-subject="PYTHON">PYTHON</button>
+    <button type="button" class="option-card" data-subject="C#">C#</button>
+    <button type="button" class="option-card" data-subject="DBMS">DBMS</button>
+</div>
+       </div>
     </div>
 
     <!-- Difficulty -->
     <div class="box">
         <h3>Choose Difficulty</h3>
         <div class="option-row">
-            <div class="option-card">Easy<br><small>Beginner friendly</small></div>
-            <div class="option-card">Medium<br><small>Moderate challenge</small></div>
-            <div class="option-card">Hard<br><small>Expert level</small></div>
+            <button type="button" class="option-card" data-level="Easy">Easy<br><small>Beginner friendly</small></button>
+            <button type="button" class="option-card" data-level="Medium">Medium<br><small>Moderate challenge</small></button>
+            <button type="button" class="option-card" data-level="Medium">Hard<br><small>Expert level</small></button>
         </div>
     </div>
 
     <!-- Start -->
     <div class="start-area">
-        <a href="instruction.html" class="start-btn">NEXT</a>
+        <button class="start-btn" id="nextBtn" onclick="goNext()">NEXT</button>
     </div>
 </div>
+</main>
 
 <!-- Footer -->
 <footer class="footer">
@@ -68,6 +73,51 @@
         </div>
     </div>
 </footer>
-
+</div>
 </body>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    let selectedSubject = "";
+    let selectedLevel = "";
+
+    // SUBJECT SELECTION
+    document.querySelectorAll("[data-subject]").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll("[data-subject]").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            selectedSubject = btn.dataset.subject;
+
+            localStorage.setItem("subject", selectedSubject);
+            console.log("Subject:", selectedSubject);
+        });
+    });
+
+    // DIFFICULTY SELECTION
+    document.querySelectorAll("[data-level]").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll("[data-level]").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            selectedLevel = btn.dataset.level;
+
+            localStorage.setItem("level", selectedLevel);
+            console.log("Level:", selectedLevel);
+        });
+    });
+
+    // NEXT BUTTON
+    document.getElementById("nextBtn").addEventListener("click", () => {
+        if (!selectedSubject || !selectedLevel) {
+            alert("Please select subject and difficulty level");
+            return;
+        }
+        window.location.href = "instruction.html";
+    });
+
+});
+</script>
+
+
+
 </html>

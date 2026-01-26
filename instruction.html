@@ -52,6 +52,7 @@
 <link rel="stylesheet" href="css/info.css">
 </head>
 <body>
+  <div class="layout">
 
   <div class="topbar">
     <div class="logo">QuizMaster</div>
@@ -67,6 +68,7 @@
     </div>
 </div>
 
+<div class="content">
 <div class="page">
 <div class="instruction-wrapper ">
   <div class="instruction-card">
@@ -98,12 +100,18 @@
       <li>You can revisit and modify answers if time remains</li>
       <li>Once time is over, answers cannot be modified</li>
       <li>Quiz auto-submits when time completes</li>
-    </ul>
+    </ul> <br>
+    <div id="info"></div>
 
+    <div class="btn-center">
     <a href="qupanel.html"><button class="start-btn">Start Quiz</button></a>
+    </div>
+  
   </div>
 </div>
 </div>
+</div>
+
 
 <!-- Footer -->
 <footer class="footer">
@@ -116,6 +124,16 @@
         </div>
     </div>
 </footer>
-
+</div>
 </body>
+<script>
+const subject = localStorage.getItem("subject");
+const level = localStorage.getItem("level");
+
+console.log(subject, level);
+
+document.getElementById("info").innerHTML =
+    `Subject: <b>${subject}</b><br>Difficulty: <b>${level}</b>`;
+</script>
+
 </html>

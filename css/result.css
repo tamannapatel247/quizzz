@@ -1,3 +1,21 @@
+html, body {
+    height: 100%;
+}
+
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;                  /* pushes footer down */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,17 +25,18 @@
 
 body{
     background:#afc8cc;
-    height:100vh;
 }
+
 .page {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 .result-card{
+    width: 100%;
+    max-width: 550px;
     margin: auto;
 }
-
 
 /* Result Card */
 .result-card{
@@ -177,7 +196,7 @@ body{
     background-color: #1e3a5f;
     color: #ffffff;
     padding: 15px 40px;
-     margin-top: 109px; 
+    margin-top: auto; 
 }
 
 .footer-content {
@@ -185,6 +204,17 @@ body{
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-links a {
+    margin-left: 0;
+    margin-right: 15px;
+  }
 }
 
 .footer-content p {
@@ -200,4 +230,30 @@ body{
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+
+  .title {
+    font-size: 28px;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .stat {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .actions a {
+    width: 100%;
+    text-align: center;
+  }
 }
