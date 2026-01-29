@@ -5,6 +5,45 @@
 <title>Quiz Result</title>
 <link rel="stylesheet" href="css/result.css">
 </head>
+
+<script>
+  const score = localStorage.getItem("score");
+  const total = localStorage.getItem("total");
+  const correct = localStorage.getItem("correct");
+  const wrong = localStorage.getItem("wrong");
+  const unanswered = localStorage.getItem("unanswered");
+
+  document.getElementById("scoreText").innerText = `${score} / ${total}`;
+  document.getElementById("correctCount").innerText = correct;
+  document.getElementById("wrongCount").innerText = wrong;
+  document.getElementById("skipCount").innerText = unanswered;
+
+  // Optional message change
+  const msg = document.querySelector(".message p");
+  if (score == total) {
+    msg.innerText = "Perfect score! Outstanding performance 💯🔥";
+  } else if (score >= total / 2) {
+    msg.innerText = "Great job! Keep practicing to improve 💚";
+  } else {
+    msg.innerText = "Don’t worry! Practice makes perfect 💪";
+  }
+
+  window.onload = function () {
+  loadQuestion();
+
+  // ✅ HIDE LOADER
+  document.querySelector(".loader-overlay").style.display = "none";
+
+  document.querySelectorAll(".option input").forEach((radio, index) => {
+    radio.addEventListener("change", () => {
+      userAnswers[currentIndex] = index;
+    });
+  });
+};
+
+</script>
+
+
 <body>
     <div class="layout">
   
@@ -28,29 +67,27 @@
     <h1 class="title">Quiz Result</h1>
     <p class="subtitle">Congratulations! You have completed the quiz </p>
 
-    <!-- Score Circle -->
     <div class="score-circle">
-        <span>3 / 4</span>
-        <small>Score</small>
+    <span id="scoreText"></span>
+    <small>Score</small>
+</div>
+
+<div class="stats">
+    <div class="stat correct">
+        <h2 id="correctCount"></h2>
+        <p>Correct</p>
     </div>
 
-    <!-- Stats -->
-    <div class="stats">
-        <div class="stat correct">
-            <h2>3</h2>
-            <p>Correct</p>
-        </div>
-
-        <div class="stat wrong">
-            <h2>1</h2>
-            <p>Wrong</p>
-        </div>
-
-        <div class="stat skip">
-            <h2>0</h2>
-            <p>Unanswered</p>
-        </div>
+    <div class="stat wrong">
+        <h2 id="wrongCount"></h2>
+        <p>Wrong</p>
     </div>
+
+    <div class="stat skip">
+        <h2 id="skipCount"></h2>
+        <p>Unanswered</p>
+    </div>
+</div>
 
     <!-- Result Message -->
     <div class="message">

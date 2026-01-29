@@ -116,7 +116,9 @@ input[type="radio"][name="step"]{
 
 /* hide all questions */
 .question-box{
-  display:none;
+  
+  height: auto;
+
 }
 
 /* show active question */
@@ -181,4 +183,7 @@ input[type="radio"][name="step"]{
     color: #fff;
     border-radius: 4px;
     cursor: pointer;
+}
+.loader-overlay {
+  display: none;
 }

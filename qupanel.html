@@ -7,50 +7,6 @@
 <link rel="stylesheet" href="css/circular.css">
 </head>
 
-<script>
-
-const questions = [
-  {
-    question: "What is HTML?",
-    options: ["Language", "Browser", "Protocol"],
-    answer: 0
-  },
-  {
-    question: "What is CSS?",
-    options: ["Style", "Database", "Server"],
-    answer: 0
-  },
-  {
-    question: "What is JavaScript?",
-    options: ["Programming", "Markup", "Design"],
-    answer: 0
-  }
-];
-let currentIndex = 0;
-
-function showQuestion() {
-  document.getElementById("progress").innerText =
-    `Question ${currentIndex + 1} of ${questions.length}`;
-}
-
-document.getElementById("q1").addEventListener("change", () => {
-  currentIndex = 0;
-  showQuestion();
-});
-
-document.getElementById("q2").addEventListener("change", () => {
-  currentIndex = 1;
-  showQuestion();
-});
-
-document.getElementById("q3").addEventListener("change", () => {
-  currentIndex = 2;
-  showQuestion();
-});
-
-</script>
-
-
 <body>
 
   <div class="topbar">
@@ -85,64 +41,168 @@ document.getElementById("q3").addEventListener("change", () => {
 
 <div class="quiz-card">
 
-<!-- hidden step controls -->
-<input type="radio" name="step" id="q1" checked>
-<input type="radio" name="step" id="q2">
-<input type="radio" name="step" id="q3">
-
-<!-- HEADER -->
-<div class="quiz-header">
-  <span>Q. 3/20</span>
-  <div class="circle-timer"> <svg> <circle class="bg"></circle> <circle class="progress"></circle> </svg> <span class="time-text">30s</span> </div>
-</div>
-
-<!-- QUESTION 1 -->
-<div class="question-box q1">
-  <p class="question">What does HTML stand for?</p>
-
-  <label class="option"><input type="radio" name="a1"> Hyper Text Markup Language</label>
-  <label class="option"><input type="radio" name="a1"> High Text Machine Language</label>
-  <label class="option"><input type="radio" name="a1"> Hyper Tool Multi Language</label>
-  <label class="option"><input type="radio" name="a1"> Home Text Markup Language</label>
-
-  <div class="nav">
-    <label for="q2" class="next-btn">Next</label>
+  <!-- HEADER -->
+  <div class="quiz-header">
+    <span>Q. 1/3</span>
+    <div class="circle-timer">
+      <svg>
+        <circle class="bg"></circle>
+        <circle class="progress"></circle>
+      </svg>
+      <span class="time-text">30s</span>
+    </div>
   </div>
-</div>
 
-<!-- QUESTION 2 -->
-<div class="question-box q2">
-  <p class="question">CSS is used for?</p>
+  <!-- QUESTION BOX -->
+  <div class="question-box">
 
-  <label class="option"><input type="radio" name="a2"> Styling web pages</label>
-  <label class="option"><input type="radio" name="a2"> Database</label>
-  <label class="option"><input type="radio" name="a2"> Server logic</label>
-  <label class="option"><input type="radio" name="a2"> None</label>
+    <p class="question"></p>
 
-  <div class="nav">
-    <label for="q1" class="prev-btn">Previous</label>
-    <label for="q3" class="next-btn">Next</label>
-  </div>
-</div>
+    <label class="option">
+  <input type="radio" name="option">
+  <span></span>
+</label>
 
-<!-- QUESTION 3 -->
-<div class="question-box q3">
-  <p class="question">Which is NOT a programming language?</p>
+<label class="option">
+  <input type="radio" name="option">
+  <span></span>
+</label>
 
-  <label class="option"><input type="radio" name="a3"> Python</label>
-  <label class="option"><input type="radio" name="a3"> Java</label>
-  <label class="option"><input type="radio" name="a3"> HTML</label>
-  <label class="option"><input type="radio" name="a3"> C</label>
+<label class="option">
+  <input type="radio" name="option">
+  <span></span>
+</label>
+
+<label class="option">
+  <input type="radio" name="option">
+  <span></span>
+</label>
+
 
   <div class="btn-group">
-  <button class="prev-btn" type="button">Previous</button>
-  <a href="result.html" class="submit-btn">Submit</a>
+  <button type="button" id="prevBtn" onclick="prevQuestion()" class="prev-btn">Previous</button>
+  <button type="button" id="nextBtn" onclick="nextQuestion()" class="next-btn">Next</button>
+  <button type="button" id="submitBtn" onclick="submitQuiz()" class="submit-btn">Submit</button>
 </div>
 
 
+  </div>
 </div>
 </div>
 
 </body>
+<script>
+const questions = [
+  {
+    question: "What does HTML stand for?",
+    options: [
+      "Hyper Text Markup Language",
+      "High Text Machine Language",
+      "Hyper Tool Multi Language",
+      "Home Text Markup Language"
+    ],
+    answer: 0
+  },
+  {
+    question: "CSS is used for?",
+    options: [
+      "Styling web pages",
+      "Database",
+      "Server logic",
+      "None"
+    ],
+    answer: 0
+  },
+  {
+    question: "Which is NOT a programming language?",
+    options: [
+      "Python",
+      "Java",
+      "HTML",
+      "C"
+    ],
+    answer: 2
+  }
+];
+
+let currentIndex = 0;
+let userAnswers = new Array(questions.length).fill(null);
+
+function loadQuestion() {
+  const q = questions[currentIndex];
+  document.querySelector(".question").innerText = q.question;
+
+  const options = document.querySelectorAll(".option input");
+  const labels = document.querySelectorAll(".option span");
+
+  labels.forEach((span, index) => {
+    span.innerText = q.options[index];
+    options[index].checked = userAnswers[currentIndex] === index;
+  });
+
+  document.querySelector(".quiz-header span").innerText =
+    `Q. ${currentIndex + 1}/${questions.length}`;
+
+  document.getElementById("prevBtn").style.display =
+    currentIndex === 0 ? "none" : "inline-block";
+
+  document.getElementById("nextBtn").style.display =
+    currentIndex === questions.length - 1 ? "none" : "inline-block";
+
+  document.getElementById("submitBtn").style.display =
+    currentIndex === questions.length - 1 ? "inline-block" : "none";
+}
+
+function nextQuestion() {
+  if (currentIndex < questions.length - 1) {
+    currentIndex++;
+    loadQuestion();
+  }
+}
+
+function prevQuestion() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    loadQuestion();
+  }
+}
+
+function submitQuiz() {
+  let score = 0;
+  let notAttempted = 0;
+
+  questions.forEach((q, index) => {
+    if (userAnswers[index] === null) {
+      notAttempted++;
+    } else if (userAnswers[index] === q.answer) {
+      score++;
+    }
+  });
+
+  let total = questions.length;
+  let wrong = total - score - notAttempted;
+
+  localStorage.setItem("score", score);
+  localStorage.setItem("total", total);
+  localStorage.setItem("correct", score);
+  localStorage.setItem("wrong", wrong);
+  localStorage.setItem("unanswered", notAttempted);
+
+  window.location.href = "result.html";
+
+
+}
+
+window.onload = function () {
+  loadQuestion();
+
+  document.querySelectorAll(".option input").forEach((radio, index) => {
+    radio.addEventListener("change", () => {
+      userAnswers[currentIndex] = index;
+    });
+  });
+};
+</script>
+
 </html>
 
