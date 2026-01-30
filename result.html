@@ -6,44 +6,6 @@
 <link rel="stylesheet" href="css/result.css">
 </head>
 
-<script>
-  const score = localStorage.getItem("score");
-  const total = localStorage.getItem("total");
-  const correct = localStorage.getItem("correct");
-  const wrong = localStorage.getItem("wrong");
-  const unanswered = localStorage.getItem("unanswered");
-
-  document.getElementById("scoreText").innerText = `${score} / ${total}`;
-  document.getElementById("correctCount").innerText = correct;
-  document.getElementById("wrongCount").innerText = wrong;
-  document.getElementById("skipCount").innerText = unanswered;
-
-  // Optional message change
-  const msg = document.querySelector(".message p");
-  if (score == total) {
-    msg.innerText = "Perfect score! Outstanding performance 💯🔥";
-  } else if (score >= total / 2) {
-    msg.innerText = "Great job! Keep practicing to improve 💚";
-  } else {
-    msg.innerText = "Don’t worry! Practice makes perfect 💪";
-  }
-
-  window.onload = function () {
-  loadQuestion();
-
-  // ✅ HIDE LOADER
-  document.querySelector(".loader-overlay").style.display = "none";
-
-  document.querySelectorAll(".option input").forEach((radio, index) => {
-    radio.addEventListener("change", () => {
-      userAnswers[currentIndex] = index;
-    });
-  });
-};
-
-</script>
-
-
 <body>
     <div class="layout">
   
@@ -117,4 +79,28 @@
 
 </div>
 </body>
+<script>
+  const score = localStorage.getItem("score");
+  const total = localStorage.getItem("total");
+  const correct = localStorage.getItem("correct");
+  const wrong = localStorage.getItem("wrong");
+  const unanswered = localStorage.getItem("unanswered");
+
+  document.getElementById("scoreText").innerText = `${score} / ${total}`;
+  document.getElementById("correctCount").innerText = correct;
+  document.getElementById("wrongCount").innerText = wrong;
+  document.getElementById("skipCount").innerText = unanswered;
+
+  // Optional message change
+  const msg = document.querySelector(".message p");
+  if (score == total) {
+    msg.innerText = "Perfect score! Outstanding performance";
+  } else if (score >= total / 2) {
+    msg.innerText = "Great job! Keep practicing to improve 💚";
+  } else {
+    msg.innerText = "Don't worry! Practice makes perfect ";
+  }
+
+</script>
+
 </html>
